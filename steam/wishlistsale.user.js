@@ -6,7 +6,7 @@
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=added
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=rank
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=price
-// @version         1.6.2
+// @version         1.7
 // @author          iasatan
 // @run-at          document-end
 // ==/UserScript==
@@ -17,32 +17,32 @@
     var percent=75;
     var count=0;
     var answer;
-
+    var goodDiscount = [];
     for(i=0;i<discount.length;i++)
     {
         if(discount[i].innerText.replace(/[^0-9]/ig, '')>=percent)
         {
+            goodDiscount.push(discount[i]);
             count++;
         }
     }
     if(count===0)
     {
-        window.alert("No sale above "+percent+"%");
+        alert("No sale above "+percent+"%");
     }
     else
     {
         alert(count+" games are having a sale above "+percent+" %");
         count=1;
-        for(i=0;i<discount.length-1;i++)
+        for(i=0;i<goodDiscount.length;i++)
         {
-            if(discount[i].innerText.replace(/[^0-9]/ig, '')>=percent)
+            if(goodDiscount[i].innerText.replace(/[^0-9]/ig, '')>=percent)
             {
-                if(confirm(count+". "+discount[i].parentElement.parentElement.parentElement.innerText.replace(/Áruházi oldal megnézése|(Eltávolítás)|Hivatkozások|Hozzáadva|január|február|március|április|május|június|július|augusztus|szeptember|október|november|december|2015|(\r\n|\n|\r)/gm,"").replace(/[^a-z0-9 %€,.]/ig, '').replace('%', "% ").slice(0,-4)))
-                    //Removes unnecesary infrmation, change them to your language
+                if(confirm(count+". "+goodDiscount[i].parentElement.innerText.replace(/[^0-9 %€,.]/ig, '').replace('%', "% ")+" "+goodDiscount[i].parentElement.parentElement.parentElement.children[2].innerText))
                 {
-                    open(discount[i].parentElement.parentElement.children[1].children[0].getAttribute('href'), '_blank');
+                    open(goodDiscount[i].parentElement.parentElement.children[1].children[0].getAttribute('href'), '_blank');
                     if(confirm("Exit?"))
-                        i=discount.lenght;
+                        i=goodDiscount.lenght;
                 }
                 count++;
             }
