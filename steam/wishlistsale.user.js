@@ -6,7 +6,7 @@
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=added
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=rank
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=price
-// @version         1.4
+// @version         1.5
 // @author          iasatan
 // @run-at          document-end
 // ==/UserScript==
@@ -46,11 +46,10 @@
                 {
 
                     if(confirm(discount[i].parentElement.parentElement.parentElement.innerText.replace(/Áruházi oldal megnézése|(Eltávolítás)|Hivatkozások|Hozzáadva|január|február|március|április|május|június|július|augusztus|szeptember|október|november|december|2015(\r\n|\n|\r)/gm,"").replace(/[^a-z0-9 %€,.]/ig, '').replace('%', "% ").slice(0,-4)))
-                    //Removes unnecesary infrmation, change them to your language
+                    //Removes unnecessary infrmation, change them to your language
                     {
                         textToFind=discount[i].innerText+"	"+dprice[i].innerText;
                         find(textToFind);
-                        document.getElementById(discount[i]).scrollIntoView();
                         i=discount.lenght;
                     }
                 }
