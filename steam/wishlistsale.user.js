@@ -18,7 +18,7 @@
     var count=0;
     var answer;
 
-    for(i=0, j=0;i<discount.length;i++, j=j+2)
+    for(i=0;i<discount.length;i++)
     {
         if(discount[i].innerText.replace(/[^0-9]/ig, '')>=percent)
         {
