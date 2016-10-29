@@ -6,7 +6,7 @@
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=added
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=rank
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=price
-// @version         1.6.1
+// @version         1.6.2
 // @author          iasatan
 // @run-at          document-end
 // ==/UserScript==
@@ -40,7 +40,6 @@
                 if(confirm(count+". "+discount[i].parentElement.parentElement.parentElement.innerText.replace(/Áruházi oldal megnézése|(Eltávolítás)|Hivatkozások|Hozzáadva|január|február|március|április|május|június|július|augusztus|szeptember|október|november|december|2015|(\r\n|\n|\r)/gm,"").replace(/[^a-z0-9 %€,.]/ig, '').replace('%', "% ").slice(0,-4)))
                     //Removes unnecesary infrmation, change them to your language
                 {
-                    //open(discount[i].parentElement.parentElement.parentElement.parentElement.children[1].children[0].children[1].children[0].getAttribute('href'), '_blank');
                     open(discount[i].parentElement.parentElement.children[1].children[0].getAttribute('href'), '_blank');
                     if(confirm("Exit?"))
                         i=discount.lenght;
