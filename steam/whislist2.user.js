@@ -14,7 +14,6 @@
 (function() {
     var discount=$J('.discount_pct');
     var games=$J('.wishlistRow ');
-    var goodDiscount = [];
     for(i=0;i<games.length;i++)
     {
         games[i].hide();
