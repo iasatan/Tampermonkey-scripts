@@ -3,7 +3,7 @@
 // @namespace       http://store.steampowered.com/app
 // @description     Finds  games that you may like
 // @include         http://store.steampowered.com/app/*
-// @version         2.7
+// @version         2.7.1
 // @author          iasatan
 // @match           http://store.steampowered.com/app/
 // ==/UserScript==
@@ -218,6 +218,12 @@ function leftInEarlyAcces(tags)
     return false;
 }
 
+function skipGame()
+{
+    $J('.queue_control_button.queue_btn_ignore .queue_btn_inactive').trigger("click");//Not interested button
+    $J('#next_in_queue_form').submit();//next in queue button
+}
+
 
 (function() {
     var tags = $J('.app_tag');
@@ -242,11 +248,10 @@ function leftInEarlyAcces(tags)
         if(shouldSkip)
             shouldSkip=notFPS(tags);
         if(shouldSkip)
-        {
-            $J('.queue_control_button.queue_btn_ignore .queue_btn_inactive').trigger("click");//Not interested button
-            $J('#next_in_queue_form').submit();//next in queue button
-        }
+            skipGame();
         else
             alert();
     }
+    else
+        skipGame();
 })();
