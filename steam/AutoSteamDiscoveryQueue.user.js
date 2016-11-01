@@ -3,7 +3,7 @@
 // @namespace       http://store.steampowered.com/app
 // @description     Finds  games that you may like
 // @include         http://store.steampowered.com/app/*
-// @version         2.7.1
+// @version         2.8
 // @author          iasatan
 // @match           http://store.steampowered.com/app/
 // ==/UserScript==
@@ -22,7 +22,6 @@ function badTags(tags)
 {
     for(i=0;i<tags.length-3;i++)
     {
-       // alert(tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, ''));
         if(tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="TurnBased"||
            tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Rejtett trgy"||
            tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Arcade"||
@@ -113,7 +112,6 @@ function badTags(tags)
            tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Racing"||
            tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Spelling")
         {
-            //alert(tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, ''));
             return true;
         }
     }
@@ -250,7 +248,10 @@ function skipGame()
         if(shouldSkip)
             skipGame();
         else
-            alert();
+        {
+            $J('#next_in_queue_form')[0].setAttribute("target", "_blank");
+            $J('#next_in_queue_form').submit();
+        }
     }
     else
         skipGame();
