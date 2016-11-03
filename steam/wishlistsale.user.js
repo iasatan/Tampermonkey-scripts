@@ -6,46 +6,35 @@
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=added
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=rank
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=price
-// @version         1.7
+// @include         http://steamcommunity.com/profiles/*/wishlist/*
+// @include         http://steamcommunity.com/profiles/*/wishlist
+// @version         1.8
 // @author          iasatan
 // @run-at          document-end
 // ==/UserScript==
 
-(function() {
+function hideGames()
+{
     var discount=$J('.discount_pct');
-    var dprice=$J('.discount_original_price');
-    var percent=75;
-    var count=0;
-    var answer;
-    var goodDiscount = [];
+    var games=$J('.wishlistRow');
+    var percent =75;
+    for(i=0;i<games.length;i++)
+    {
+        games[i].hide();
+    }
     for(i=0;i<discount.length;i++)
     {
         if(discount[i].innerText.replace(/[^0-9]/ig, '')>=percent)
         {
-            goodDiscount.push(discount[i]);
-            count++;
+            discount[i].parentElement.parentElement.parentElement.parentElement.show();
         }
     }
-    if(count===0)
-    {
-        alert("No sale above "+percent+"%");
-    }
-    else
-    {
-        alert(count+" games are having a sale above "+percent+" %");
-        count=1;
-        for(i=0;i<goodDiscount.length;i++)
-        {
-            if(goodDiscount[i].innerText.replace(/[^0-9]/ig, '')>=percent)
-            {
-                if(confirm(count+". "+goodDiscount[i].parentElement.innerText.replace(/[^0-9 %€,.]/ig, '').replace('%', "% ")+" "+goodDiscount[i].parentElement.parentElement.parentElement.children[2].innerText))
-                {
-                    open(goodDiscount[i].parentElement.parentElement.children[1].children[0].getAttribute('href'), '_blank');
-                    if(confirm("Exit?"))
-                        i=goodDiscount.lenght;
-                }
-                count++;
-            }
-        }
-    }
+}
+
+(function() {
+    var button = document.createElement("input");
+    button.type = "button";
+    button.value = "hide games without sale";
+    button.onclick = hideGames;
+    logo_holder.appendChild(button);
 })();
