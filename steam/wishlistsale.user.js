@@ -8,7 +8,7 @@
 // @include         http://steamcommunity.com/id/*/wishlist/?sort=price
 // @include         http://steamcommunity.com/profiles/*/wishlist/*
 // @include         http://steamcommunity.com/profiles/*/wishlist
-// @version         1.8
+// @version         1.9
 // @author          iasatan
 // @run-at          document-end
 // ==/UserScript==
