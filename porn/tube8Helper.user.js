@@ -16,7 +16,7 @@
         title[i]=porn[i].children[1].innerText.toLowerCase();
     }
     for(i=0;i<title.length;i++){
-        if(title[i].includes('interracial')||title[i].includes('ebony')||title[i].includes('interacial')||title[i].includes('black')||title[i].includes('bbc')||title[i].includes('piss')||title[i].includes('cuck'))
+        if(title[i].includes('piss')||title[i].includes('ebony')||title[i].includes('interacial')||title[i].includes('black')||title[i].includes('bbc')||title[i].includes('interracial')||title[i].includes('cuck'))
             porn[i].style.display = 'none';
     }
     for(i=0;i<porn.length;i++){
