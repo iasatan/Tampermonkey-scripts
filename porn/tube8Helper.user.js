@@ -21,6 +21,7 @@
         while(length--) {
             if (title[i].indexOf(keyWords[length])!=-1) {
                 porn[i].style.display = 'none';
+                break;
             }
         }
     }
