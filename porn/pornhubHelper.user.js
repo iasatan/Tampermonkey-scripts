@@ -19,6 +19,7 @@
         while(length--) {
             if (title[i].indexOf(keyWords[length])!=-1) {
                 thumb[i].parentElement.parentElement.parentElement.style.display = 'none';
+                break;
             }
         }
     }
