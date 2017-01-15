@@ -3,11 +3,15 @@
 // @namespace       http://store.steampowered.com/app
 // @description     Finds  games that you may like
 // @include         http://store.steampowered.com/app/*
-// @version         2.8
+// @version         2.9
 // @author          iasatan
 // @match           http://store.steampowered.com/app/
 // ==/UserScript==
 
+var keyWords=['TurnBased', 'Rejtett trgy', 'Arcade', 'Twin Stick Shooter', 'Match 3', 'TopDown', 'Pixel Graphics', 'Relaxing', 'Side Scroller', 'Local Multiplayer', 'Puzzle', '2D', 'Family Friendly', 'Gore', 'RTS', 'Education', 'Cute', 'Nudity', 'Historical', 'Memes', 'VR', 'Hidden Object', 'MMORPG', 'Tower Defense', 'Music', 'Management', 'JRPG',
+              'Illuminati', 'Dating Sim', 'Survival Horror', 'Psychological Horror', 'Bullet Hell', 'Trains', 'Grand Strategy', 'City Builder', 'MOBA', 'Perma Death', 'Base Building', 'Card Game', 'Board Game', 'Economy', 'Choose Your Own Adventure', 'TurnBased Combat', 'TurnBased Tactics', 'TurnBased Strategy', 'Detective', 'Top Down Shooter',
+             'Resource Management', '2.5D', 'Lovecraftian', 'Noir', 'Soundtrack', '2D Fighter', 'Split screen', 'Comic book', 'Strategy RPG', 'LEGO', 'FMV', 'Star Wars', 'Real Time Tactics', 'Politics', 'Batman', 'Agriculture', 'Grid Based Movement', 'Clicker', 'Political', 'Inventory Management', 'Chess', 'Programming', 'Typing', 'Gambling', 'Capitalism',
+             'Diplomacy', 'Point & Click', 'Sports', 'Visual Novel', 'Anime', 'Casual', 'Massively Multiplayer', 'Walking Simulator', 'Movie', '4 Player Local', 'Crime', 'Free to Play', 'Interactive Fiction', 'Racing', 'Spelling'];
 function dislikedDevelopers()
  {
      var fejleszto=$J('.details_block');
@@ -22,97 +26,12 @@ function badTags(tags)
 {
     for(i=0;i<tags.length-3;i++)
     {
-        if(tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="TurnBased"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Rejtett trgy"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Arcade"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Twin Stick Shooter"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Match 3"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="TopDown"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Pixel Graphics"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Relaxing"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Side Scroller"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Local Multiplayer"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Puzzle"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="2D"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Family Friendly"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Gore"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="RTS"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Education"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Cute"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Nudity"||
-           tags[i].innerText==="Survival Horror"||
-           tags[i].innerText==="Psychological Horror"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Historical"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Memes"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="VR"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Hidden Object"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="MMORPG"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Tower Defense"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Music"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Management"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="JRPG"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Illuminati"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Dating Sim"||
-           tags[i].innerText==="Bullet Hell"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Trains"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Grand Strategy"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="City Builder"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="MOBA"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Perma Death"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Base Building"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Card Game"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Board Game"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Economy"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Choose Your Own Adventure"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="TurnBased Combat"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="TurnBased Tactics"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="TurnBased Strategy"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Detective"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Top Down Shooter"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Resource Management"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="2.5D"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Lovecraftian"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Noir"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Soundtrack"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="2D Fighter"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Split screen"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Comic Book"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Strategy RPG"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="God Game"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Tactical RPG"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="LEGO"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="FMV"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Star Wars"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Real Time Tactics"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Politics"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Batman"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Agriculture"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Grid Based Movement"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Clicker"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Political"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Inventory Management"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Chess"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Programming"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Typing"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Gambling"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Capitalism"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Diplomacy"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!&]/ig, '')==="Point & Click"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Sports"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Visual Novel"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Anime"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Casual"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Massively Multiplayer"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Walking Simulator"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Movie"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="4 Player Local"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Crime"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Free to Play"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Interactive Fiction"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Racing"||
-           tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '')==="Spelling")
-        {
-            return true;
+        var temp=tags[i].innerText.replace(/[^a-z0-9 ,.?!]/ig, '');
+        var length = keyWords.length;
+        while(length--) {
+            if (temp.indexOf(keyWords[length])!=-1) {
+                return true;
+            }
         }
     }
     return false;
