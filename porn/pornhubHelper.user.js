@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         pornhub helper
 // @namespace    pornhub.com
-// @version      0.2
+// @version      0.3
 // @description  No more nigger or degenerate porn
 // @author       iasatan
 // @match        http://www.pornhub.com/*
 // ==/UserScript==
 
 (function() {
-    var keyWords=['ebony', 'piss', 'interracial', 'interacial', 'bbc', 'cuck'];
+    var keyWords=['ebony', 'piss', 'interracial', 'interacial', 'bbc', 'cuck', 'black', 'milkingtable', 'compilation', 'cumpilation', 'mandingo'];
     var thumb = document.getElementsByClassName('thumbnail-info-wrapper');
     var title =[];
     for(i=6;i<thumb.length;i++){
