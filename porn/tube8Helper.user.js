@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 (function() {
-    var keyWords=['ebony', 'piss', 'interracial', 'interacial', 'bbc', 'cuck'];
+    var keyWords=['ebony', 'piss', 'interracial', 'interacial', 'bbc', 'cuck', 'black', 'milkingtable', 'compilation', 'cumpilation', 'mandingo'];
     var porn = document.getElementsByClassName('video_box');
     var title =[];
     for(i=0;i<porn.length;i++)
