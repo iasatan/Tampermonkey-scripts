@@ -8,7 +8,7 @@
 // ==/UserScript==
 
 (function() {
-    var keyWords=['ebony', 'piss', 'interracial', 'interacial', 'bbc', 'cuck', 'black', 'milkingtable', 'compilation', 'cumpilation', 'mandingo'];
+    var keyWords=['ebony', 'piss', 'interracial', 'interacial', 'bbc', 'cuck', 'black', 'milkingtable', 'compilation', 'cumpilation', 'mandingo', 'bbw', 'faketaxi', 'old', '3d', 'chubby', 'pee', 'fat', 'pregnant', 'humiliation', 'dad', 'burningangel'];
     var thumb = document.getElementsByClassName('thumbnail-info-wrapper');
     var title =[];
     for(i=6;i<thumb.length;i++){
