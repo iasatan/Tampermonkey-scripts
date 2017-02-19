@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         pornhub helper
 // @namespace    pornhub.com
-// @version      0.3
+// @version      0.4
 // @description  No more nigger or degenerate porn
 // @author       iasatan
 // @match        http://www.pornhub.com/*
