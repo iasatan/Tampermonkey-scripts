@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         tube8 helper
 // @namespace    tube8.com
-// @version      0.3
+// @version      0.4
 // @description  No more nigger or degenerate porn
 // @author       iasatan
 // @match        http://www.tube8.com/cat/*
@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 (function() {
-    var keyWords=['ebony', 'piss', 'interracial', 'interacial', 'bbc', 'cuck', 'black', 'milkingtable', 'compilation', 'cumpilation', 'mandingo', 'bbw', 'faketaxi', 'old', '3d', 'chubby', 'pee', 'fat', 'pregnant', 'humiliation', 'dad', 'burningangel', 'pegging', 'bbd', 'toilet'];
+    var keyWords=['whore', 'african', 'slut', 'ebony', 'piss', 'interracial', 'interacial', 'bbc', 'cuck', 'black', 'milkingtable', 'compilation', 'cumpilation', 'mandingo', 'bbw', 'faketaxi', 'old', '3d', 'chubby', 'pee', 'fat', 'pregnant', 'humiliation', 'dad', 'burningangel', 'pegging', 'bbd', 'toilet'];
     var porn = document.getElementsByClassName('video_box');
     var title =[];
     for(i=0;i<porn.length;i++)
