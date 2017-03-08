@@ -2,8 +2,8 @@
 // @name         Automatic Series Torrent Finder
 // @namespace    http://www.pogdesign.co.uk/cat/
 // @include      http://www.pogdesign.co.uk/cat/
-// @version      1.5
-// @description  searches for todays episodes in glodls
+// @version      1.6
+// @description  searches for todays episodes in piratebay
 // @author       iasatan
 // ==/UserScript==
 
@@ -30,10 +30,17 @@ function checkButtonNecesity(){
     }
     return false;
 }
-
+Date.prototype.getWeekNumber = function(){
+    var d = new Date(+this);
+    d.setHours(0,0,0,0);
+    d.setDate(d.getDate()+4-(d.getDay()||7));
+    return Math.ceil((((d-new Date(d.getFullYear(),0,1))/8.64e7)+1)/7);
+};
 
 (function() {
     if(new Date().getDay()==3){
+        var day = document.getElementById("today").parentElement.children[1];
+        day.innerHTML='<div class="ep info"><span><input type="checkbox"><label><span></span></label><p data-episode=""><a href="http://glodls.to/search_results.php?search=mp3+new&incldead=Search">MP3 New Releases Week '+(new Date().getWeekNumber()-1)+'</a></p></span></div>';
         var btn2 = document.createElement("input");
         btn2.type = "button";
         btn2.value = "Search Music";
