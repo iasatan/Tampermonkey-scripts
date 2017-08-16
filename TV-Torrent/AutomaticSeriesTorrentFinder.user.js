@@ -2,7 +2,7 @@
 // @name         Automatic Series Torrent Finder
 // @namespace    http://www.pogdesign.co.uk/cat/
 // @include      http://www.pogdesign.co.uk/cat/
-// @version      1.6
+// @version      1.7
 // @description  searches for todays episodes in piratebay
 // @author       iasatan
 // ==/UserScript==
@@ -40,7 +40,7 @@ Date.prototype.getWeekNumber = function(){
 (function() {
     if(new Date().getDay()==3){
         var day = document.getElementById("today").parentElement.children[1];
-        day.innerHTML='<div class="ep info"><span><input type="checkbox"><label><span></span></label><p data-episode=""><a href="http://glodls.to/search_results.php?search=mp3+new&incldead=Search">MP3 New Releases Week '+(new Date().getWeekNumber()-1)+'</a></p></span></div>';
+        day.innerHTML+='<div class="ep info"><span><input type="checkbox"><label><span></span></label><p data-episode=""><a href="http://glodls.to/search_results.php?search=mp3+new&incldead=Search">MP3 New Releases Week '+(new Date().getWeekNumber()-1)+'</a></p></span></div>';
         var btn2 = document.createElement("input");
         btn2.type = "button";
         btn2.value = "Search Music";
