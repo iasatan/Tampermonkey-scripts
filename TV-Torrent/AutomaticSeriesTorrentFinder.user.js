@@ -2,7 +2,7 @@
 // @name         Automatic Series Torrent Finder
 // @namespace    http://www.pogdesign.co.uk/cat/
 // @include      http://www.pogdesign.co.uk/cat/
-// @version      1.7
+// @version      1.8
 // @description  searches for todays episodes in piratebay
 // @author       iasatan
 // ==/UserScript==
@@ -10,15 +10,10 @@
 function searchThem(){
     var today = document.getElementById("today").parentElement.children;
     for(i=1;i<today.length;i++){
-            if(!today[i].className.includes("checked")){
-                if(today[i].children[0].children[2].children[0].innerText==="Agents of SHIELD"){
-                    open("https://thepiratebay.org/search/Agents%20of%20"+today[i].children[0].children[2].children[1].innerText,i+"a");
-                }
-                else{
-                    open("https://thepiratebay.org/search/"+today[i].children[0].children[2].children[0].innerText+"%20"+today[i].children[0].children[2].children[1].innerText,i+"a");
-                }
-            }
+        if(!today[i].className.includes("checked")){
+            open("https://thepiratebay.org/search/"+today[i].children[0].children[2].children[0].innerText+"%20"+today[i].children[0].children[2].children[1].innerText,i+"a");
         }
+    }
 }
 function checkButtonNecesity(){
     var today = document.getElementById("today").parentElement.children;
@@ -26,7 +21,7 @@ function checkButtonNecesity(){
         close();
     for(i=1;i<today.length;i++){
         if(!today[i].className.includes("checked"))
-           return true;
+            return true;
     }
     return false;
 }
