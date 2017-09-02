@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         jsBlocker
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Blocks javaScript
 // @author       iasatan
-// @match        https://yts.ag/
-// @include      http://glodls.to
+// @match        https://yts.ag/*
+// @include      http://glodls.to/*
 // ==/UserScript==
 
 var scripts = document.getElementsByTagName("script");
