@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         Automatic Series Torrent Finder
-// @namespace    http://www.pogdesign.co.uk/cat/
-// @include      http://www.pogdesign.co.uk/cat/
-// @version      1.8
+// @namespace    https://www.pogdesign.co.uk/cat/
+// @include      https://www.pogdesign.co.uk/cat/
+// @version      2.0
 // @description  searches for todays episodes in piratebay
 // @author       iasatan
+// @grant        window.close
 // ==/UserScript==
 
 function searchThem(){
@@ -17,10 +18,10 @@ function searchThem(){
 }
 function checkButtonNecesity(){
     var today = document.getElementById("today").parentElement.children;
-    if(today.length==1)
-        close();
+    if(today.length<=2)
+        window.close();
     for(i=1;i<today.length;i++){
-        if(!today[i].className.includes("checked"))
+       if(!today[i].className.includes("checked"))
             return true;
     }
     return false;
