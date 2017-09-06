@@ -2,7 +2,7 @@
 // @name         Automatic Series Torrent Finder
 // @namespace    https://www.pogdesign.co.uk/cat/
 // @include      https://www.pogdesign.co.uk/cat/
-// @version      2.0
+// @version      2.1
 // @description  searches for todays episodes in piratebay
 // @author       iasatan
 // @grant        window.close
@@ -18,7 +18,7 @@ function searchThem(){
 }
 function checkButtonNecesity(){
     var today = document.getElementById("today").parentElement.children;
-    if(today.length<=2)
+    if(today.length<=2 && new Date().getDay()!=3)
         window.close();
     for(i=1;i<today.length;i++){
        if(!today[i].className.includes("checked"))
