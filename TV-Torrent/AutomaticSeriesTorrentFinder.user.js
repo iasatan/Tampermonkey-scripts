@@ -2,10 +2,9 @@
 // @name         Automatic Series Torrent Finder
 // @namespace    https://www.pogdesign.co.uk/cat/
 // @include      https://www.pogdesign.co.uk/cat/
-// @version      2.1.1
+// @version      2.2
 // @description  searches for todays episodes in piratebay
 // @author       iasatan
-// @grant        window.close
 // ==/UserScript==
 
 function searchThem(){
@@ -15,16 +14,6 @@ function searchThem(){
             open("https://thepiratebay.org/search/"+today[i].children[0].children[2].children[0].innerText+"%20"+today[i].children[0].children[2].children[1].innerText,i+"a");
         }
     }
-}
-function checkButtonNecesity(){
-    var today = document.getElementById("today").parentElement.children;
-    if(today.length<=1 && new Date().getDay()!=3)
-        window.close();
-    for(i=1;i<today.length;i++){
-       if(!today[i].className.includes("checked"))
-            return true;
-    }
-    return false;
 }
 Date.prototype.getWeekNumber = function(){
     var d = new Date(+this);
@@ -43,11 +32,9 @@ Date.prototype.getWeekNumber = function(){
         btn2.onclick=function(){open("http://glodls.to/search_results.php?search=mp3+new&incldead=Search");};
         today.appendChild(btn2);
     }
-    if(checkButtonNecesity()){
         var btn = document.createElement("input");
         btn.type = "button";
         btn.value = "Search";
         btn.onclick=searchThem;
         today.appendChild(btn);
-    }
 })();
