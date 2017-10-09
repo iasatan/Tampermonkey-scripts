@@ -2,7 +2,7 @@
 // @name         Automatic Series Torrent Finder
 // @namespace    https://www.pogdesign.co.uk/cat/
 // @include      https://www.pogdesign.co.uk/cat/
-// @version      2.2
+// @version      2.3
 // @description  searches for todays episodes in piratebay
 // @author       iasatan
 // ==/UserScript==
@@ -11,7 +11,7 @@ function searchThem(){
     var today = document.getElementById("today").parentElement.children;
     for(i=1;i<today.length;i++){
         if(!today[i].className.includes("checked")){
-            open("https://thepiratebay.org/search/"+today[i].children[0].children[2].children[0].innerText+"%20"+today[i].children[0].children[2].children[1].innerText,i+"a");
+            open("https://thepiratebay.org/search/"+today[i].children[0].children[2].children[0].innerText+"%20"+today[i].children[0].children[2].children[1].innerText+"/0/99/208",i+"a");
         }
     }
 }
